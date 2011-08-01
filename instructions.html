@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>&micro;Player - A Simple HTML5/JavaScript Audio Widget</title>
+    <script type="text/javascript" src="uplayer.js"></script>
+    <script type="text/javascript">
+    // abort if we don't have HTML5 support
+	if (!document.createElement('canvas').getContext){
+		alert('Your browser does not have HTML5 support! Please come back with a supported browser.');
+	}
+    </script>
+  </head>
+  <body>
+    <h1>&micro;Player - A Simple HTML5/JavaScript Audio Widget</h1>
+    <h2>What is it?</h2>
+    <p>&micro;Player (as in microPlayer) is an easy to use, cross-browser HTML5/JavaScript audio player. It replaces the default &lt;audio&gt; tag controls with a customizable interface that allows you to maintain a consistent look across supported browsers (Firefox, Safari, Chrome, Opera). It enables play/pause, seek, title display, and time display. Although quite minimalist in design, it should prove to be elegant and effective in your site layout compared to the browser defaults which vary by vendor. <i>All of what you need, nothing you don't...</i></p>
+    <h2>How do I use it?</h2>
+    <p>Using &micro;Player is very simple. The first step is to include the (1.8 KB GZipped) JavaScript file in the &lt;head&gt; of your page, and the second step is to actually make the call that creates a player. It is highly recommended to provide both an MP3 and OGG version of the audio file because of <a href="http://ajaxian.com/archives/the-doctor-subscribes-html-5-audio-cross-browser-support" target="_blank">different browser support</a>. You may provide any or all of MP3, OGG, or WAV, however WAV is not required nor recommneded.</p>
+    <p>Place in &lt;head&gt;:</p>
+    <xmp><script type="text/javascript" src="uplayer.js"></script></xmp>
+    <p>Place in &lt;body&gt;:</p>
+    <xmp><script type="text/javascript">
+
+uPlayer({
+    width : 300,
+    mainColor : '#FF9900',
+    progressColor : '#FF5F00',
+    textColor : '#221200',
+    title : 'Radiohead - I Am Citizen Insane',
+    mp3 : 'http://box.terenz.io/iaci.mp3',
+    ogg : 'http://box.terenz.io/iaci.ogg'
+});
+
+</script></xmp>
+  <h2>Above Example:</h2>
+    <script type="text/javascript">
+uPlayer({
+    width : 300,
+    mainColor : '#FF9900',
+    progressColor : '#FF5F00',
+    textColor : '#221200',
+    title : 'Radiohead - I Am Citizen Insane',
+    mp3 : 'http://box.terenz.io/iaci.mp3',
+    ogg : 'http://box.terenz.io/iaci.ogg',
+});
+   </script>
+   <h2>Configuration Options:</h2>
+   <ul>
+     <li>width - the width of the unit (required)</li>
+     <li>height - the height of the unit (optional, default: width/10)</li>
+     <li>mainColor - the color of the play button and progress bar (optional, default: #AAA)</li>
+     <li>progressColor - the color of the progress bar indicating play time (optional, default: #777)</li>
+     <li>textColor - the color of the text (optional, default: #000)</li>
+     <li>title - the title to display (optional, defaults to filename)</li>
+     <li>mp3, ogg, wav - the url of the audio file(s) (required)</li>
+     <li>autoplay - (boolean) whether or not to play automatically (optional, default: false)</li>
+     <li>divId - the id of the div containing the player (optional, default uPlayer+[random])</li>
+     <li>divClass - the class of the div containing the player (optional, default: uPlayer)</li>
+   </ul>
+   <h2>Coming Soon...</h2>
+   <p>Features to be introduced in upcoming versions:</p>
+   <ul>
+     <li>volume/mute controls</li>
+     <li>awareness of other audio tags on the page (you play one, it stops all others)</li>
+     <li>scrolling for long titles</li>
+     <li>toggling progress bar to enable a square unit with only a button</li>
+     <li>iPhone/iPad support, currently waiting for Apple to <a href="http://stackoverflow.com/questions/2998941/iphone-ipad-html5-canvas-filltext-problem" target="_blank">fix something first</a></li>
+   </ul>
+   <h2>Download:</h2>
+   <p>Version 1.0.0 - 6/25/10: <a href="uplayer.js">uplayer.js</a></p>
+  </body>
+</html>
